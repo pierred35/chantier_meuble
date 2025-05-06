@@ -20,13 +20,17 @@
     </style>
   </head>
   <body>
-    <model-viewer
-      src="https://drive.google.com/uc?export=download&id=136LNLHuxPXs6Bt3doOysekjrcq0-zF6c"
-      ar
-      ar-modes="scene-viewer webxr quick-look"
-      auto-rotate
-      camera-controls
-      alt="Ton meuble en 3D">
+  
+  	<model-viewer  
+  		src="https://drive.google.com/uc?export=download&id=136LNLHuxPXs6Bt3doOysekjrcq0-zF6c" 
+  		ar 
+  		ar-scale="fixed" 
+  		camera-controls touch-action="pan-y" 
+  		alt="mon meuble en 3D" 
+  		shadow-intensity="2" 
+  		max-camera-orbit="auto 90deg auto" 
+  		xr-environment>
+	
     </model-viewer>
   </body>
 </html>
