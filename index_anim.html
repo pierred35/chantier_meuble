@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <title>Visualisation AR</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
+    <script>
+	  (() => {
+	    const modelViewer = document.querySelector('#paused-change-demo');
+	
+	    self.setInterval(() => {
+	      modelViewer.animationName = modelViewer.animationName === 'CubeAction1' ?
+		'CubeAction2' : 'CubeAction1';
+	    }, 2000.0);
+	  })();
+    </script>
+    
+<style>
       body {
         margin: 0;
         display: flex;
@@ -17,9 +28,11 @@
         width: 100%;
         height: 90vh;
       }
-    </style>
+</style>
+	  
   </head>
-  <body>
+  
+<body>
   	<model-viewer  
   		src="Chaise_haute.glb" 
   		ar 
@@ -47,16 +60,6 @@
 		src="Cube_test_anim2.glb"  
 		alt="An animated 3D model of a cube">
 	</model-viewer>
-                <script>
-                  (() => {
-                    const modelViewer = document.querySelector('#paused-change-demo');
-
-                    self.setInterval(() => {
-                      modelViewer.animationName = modelViewer.animationName === 'CubeAction1' ?
-                        'CubeAction2' : 'CubeAction1';
-                    }, 2000.0);
-                  })();
-                </script>
 	  
   </body>
 </html>
