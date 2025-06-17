@@ -34,17 +34,29 @@
   		style="width: 100%; height: 500px;"
   		xr-environment>
 	</model-viewer>
-
+ 
 	<model-viewer 
+		id="paused-change-demo" 
 		camera-controls touch-action="pan-y" 
 		autoplay 
+		animation-name="CubeAction1" 
 		ar 
 		ar-modes="webxr scene-viewer" 
-		scale="1 1 1" 
+		scale="0.2 0.2 0.2" 
 		shadow-intensity="1" 
-		src="Cube_test_anim.glb" 
+		src="Cube_test_anim2.glb"  
 		alt="An animated 3D model of a cube">
 	</model-viewer>
+                <script>
+                  (() => {
+                    const modelViewer = document.querySelector('#paused-change-demo');
+
+                    self.setInterval(() => {
+                      modelViewer.animationName = modelViewer.animationName === 'CubeAction1' ?
+                        'CubeAction2' : 'CubeAction1';
+                    }, 2000.0);
+                  })();
+                </script>
 	  
   </body>
 </html>
